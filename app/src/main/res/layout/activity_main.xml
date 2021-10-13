@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Camera" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gallery" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="File" />
+
+</LinearLayout>
