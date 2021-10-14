@@ -26,4 +26,9 @@
         android:layout_height="wrap_content"
         android:text="File" />
 
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="150dp"
+        android:layout_height="150dp"/>
+
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.designexxa.filepicker
 
 import android.content.Context
+import android.content.Intent
 
 object FilePicker : MediaUtils() {
 
@@ -14,5 +15,21 @@ object FilePicker : MediaUtils() {
 
     fun openFileManager(context: Context) {
         fileManager(context = context)
+    }
+
+    fun getFileResult(
+        context: Context,
+        requestCode: Int,
+        resultCode: Int,
+        intent: Intent?,
+        maxSize: Int = 0
+    ): ArrayList<FileData> {
+        return fileResult(
+            context = context,
+            requestCode = requestCode,
+            resultCode = resultCode,
+            intent = intent,
+            maxSize = maxSize
+        )
     }
 }
