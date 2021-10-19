@@ -116,10 +116,10 @@ abstract class Utils {
 
     // FileUriUtils
     protected fun getFilePath(context: Context, uri: Uri): String? {
-        var path = getPathFromLocalUri(context, uri)
-        if (path == null) {
+        val path = getPathFromLocalUri(context, uri)
+        /*if (path == null) {
             path = getPathFromRemoteUri(context, uri)
-        }
+        }*/
         return path
     }
 
