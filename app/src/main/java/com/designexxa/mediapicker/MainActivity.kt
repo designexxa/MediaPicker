@@ -4,9 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.designexxa.filepicker.FileData
-import com.designexxa.filepicker.FilePicker
+import com.designexxa.filepicker.*
 import com.designexxa.mediapicker.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -35,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         val fileDataList: ArrayList<FileData> =
             FilePicker.getFileResult(context, requestCode, resultCode, data)
         if (fileDataList.size > 0) {
-            binding.iv.setImageURI(fileDataList[0].fileUri)
+            val filePath: String = fileDataList[0].filePath
         }
     }
 }

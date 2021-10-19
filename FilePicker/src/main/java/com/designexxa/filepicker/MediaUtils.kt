@@ -19,7 +19,7 @@ abstract class MediaUtils : Permissions() {
     private val REQUEST_CODE_GALLERY: Int = 7
     private val REQUEST_CODE_FILE: Int = 8
 
-    var imgUri: Uri? = null
+    private var imgUri: Uri? = null
 
     protected fun camera(
         context: Context,
