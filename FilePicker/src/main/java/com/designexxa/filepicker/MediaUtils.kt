@@ -13,7 +13,7 @@ import androidx.core.content.FileProvider
 import java.io.File
 import java.net.URI
 
-abstract class MediaUtils : Permissions() {
+open class MediaUtils : Permissions() {
 
     private val REQUEST_CODE_CAMERA: Int = 6
     private val REQUEST_CODE_GALLERY: Int = 7
@@ -21,7 +21,7 @@ abstract class MediaUtils : Permissions() {
 
     private var imgUri: Uri? = null
 
-    protected fun camera(
+    fun camera(
         context: Context,
         isSquare: Boolean = false
     ) {
@@ -60,7 +60,7 @@ abstract class MediaUtils : Permissions() {
         }
     }
 
-    protected open fun gallery(
+    open fun gallery(
         context: Context,
         imageType: Array<String> = emptyArray(),
         isSquare: Boolean = false
@@ -78,7 +78,7 @@ abstract class MediaUtils : Permissions() {
         }
     }
 
-    protected open fun fileManager(
+    open fun fileManager(
         context: Context,
         fileType: Array<String> = emptyArray(),
     ) {
@@ -95,7 +95,7 @@ abstract class MediaUtils : Permissions() {
     }
 
     // result
-    protected fun fileResult(
+    fun fileResult(
         context: Context,
         requestCode: Int,
         resultCode: Int,

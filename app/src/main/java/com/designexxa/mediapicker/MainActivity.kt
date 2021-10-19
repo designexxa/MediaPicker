@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         val fileDataList: ArrayList<FileData> =
             FilePicker.getFileResult(context, requestCode, resultCode, data)
         if (fileDataList.size > 0) {
+            // file path
             val filePath: String = fileDataList[0].filePath
         }
     }
