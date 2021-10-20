@@ -14,6 +14,7 @@ object FilePicker : MediaUtils() {
     }
 
     fun openFileManager(context: Context) {
+        //val fileType = arrayOf("video/*", "image/*", "application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
         fileManager(context = context)
     }
 

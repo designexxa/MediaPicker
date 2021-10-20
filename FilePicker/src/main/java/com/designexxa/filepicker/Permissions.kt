@@ -26,7 +26,7 @@ abstract class Permissions: Utils() {
 
     // check permissions
     protected fun checkPermissionManageStorage(context: Context): Boolean {
-        /*return if (SDK_INT >= Build.VERSION_CODES.R) { // R is Android 11
+        return if (SDK_INT >= Build.VERSION_CODES.R) { // R is Android 11
             Environment.isExternalStorageManager()
         } else {
             (ActivityCompat.checkSelfPermission(
@@ -37,16 +37,16 @@ abstract class Permissions: Utils() {
                 (context as Activity),
                 Manifest.permission.READ_EXTERNAL_STORAGE
             ) == PackageManager.PERMISSION_GRANTED)
-        }*/
+        }
 
-        return (ActivityCompat.checkSelfPermission(
+        /*return (ActivityCompat.checkSelfPermission(
             (context as Activity),
             Manifest.permission.WRITE_EXTERNAL_STORAGE
         ) == PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(
             (context as Activity),
             Manifest.permission.READ_EXTERNAL_STORAGE
-        ) == PackageManager.PERMISSION_GRANTED)
+        ) == PackageManager.PERMISSION_GRANTED)*/
     }
 
     protected fun checkPermissionCamera(context: Context): Boolean {
@@ -62,7 +62,7 @@ abstract class Permissions: Utils() {
 
     // request permissions
     protected fun requestPermissionManageStorage(context: Context) {
-        /*if (SDK_INT >= Build.VERSION_CODES.R) { // R is Android 11
+        if (SDK_INT >= Build.VERSION_CODES.R) { // R is Android 11
             try {
                 (context as Activity).startActivityForResult(
                     Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
@@ -91,14 +91,14 @@ abstract class Permissions: Utils() {
                     Manifest.permission.READ_EXTERNAL_STORAGE
                 ), PERMISSION_STORAGE_REQUEST_CODE
             )
-        }*/
+        }
 
-        ActivityCompat.requestPermissions(
+        /*ActivityCompat.requestPermissions(
             (context as Activity), arrayOf(
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.READ_EXTERNAL_STORAGE
             ), PERMISSION_STORAGE_REQUEST_CODE
-        )
+        )*/
     }
 
     protected fun requestPermissionCamera(context: Context) {
@@ -117,13 +117,13 @@ abstract class Permissions: Utils() {
         grantResults: IntArray? = null
     ): Boolean {
         val isPermissionsGranted: Boolean = when (requestCode) {
-            /*Constants.PERMISSION_MANAGE_STORAGE_REQUEST_CODE -> {
+            PERMISSION_MANAGE_STORAGE_REQUEST_CODE -> {
                 if (SDK_INT >= Build.VERSION_CODES.R) { // R is Android 11
                     Environment.isExternalStorageManager()
                 } else {
                     false
                 }
-            }*/
+            }
             PERMISSION_STORAGE_REQUEST_CODE -> {
                 (grantResults!!.isNotEmpty()
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED
